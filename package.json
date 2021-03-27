@@ -19,6 +19,7 @@
     "react-thunk": "^1.0.0",
     "redux": "^4.0.5",
     "style-component": "^0.0.1",
+    "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
