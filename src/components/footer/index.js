@@ -57,12 +57,11 @@ export default memo(function Footer() {
                             return (
                                 <li className="item" key={item.link}>
                                     <a className="link" href={item.link} rel="noopener noreferrer" target="_blank"> </a>
-                                    <span className="title">{item.title}</span>
+                                    <span className="title"></span>
                                 </li>
                             )
                         })
                     }
-                    <div>123</div>
                 </FooterRight>
             </div>
 

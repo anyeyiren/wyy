@@ -1200,16 +1200,7 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@babel/types@^7.13.0":
-  version "7.13.12"
-  resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.13.12.tgz?cache=0&sync_timestamp=1616428068418&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.13.12.tgz#edbf99208ef48852acdff1c8a681a1e4ade580cd"
-  integrity sha1-7b+ZII70iFKs3/HIpoGh5K3lgM0=
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.12.11"
-    lodash "^4.17.19"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.13.13":
+"@babel/types@^7.13.0", "@babel/types@^7.13.13":
   version "7.13.13"
   resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.13.13.tgz?cache=0&sync_timestamp=1616794441163&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.13.13.tgz#dcd8b815b38f537a3697ce84c8e3cc62197df96f"
   integrity sha1-3Ni4FbOPU3o2l86EyOPMYhl9+W8=
@@ -11008,11 +10999,6 @@ strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
-
-style-component@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npm.taobao.org/style-component/download/style-component-0.0.1.tgz#5157d893e9c3dd93b00446719f8357567ef18e57"
-  integrity sha1-UVfYk+nD3ZOwBEZxn4NXVn7xjlc=
 
 style-loader@1.3.0:
   version "1.3.0"

@@ -34,7 +34,7 @@ export default memo(function Header(props) {
         <HeaderWrapper>
             <div className="content wrap-v1">
                 <HeaderLeft>
-                    <a href="#/" className="logo sprite_01">网易云音乐</a>
+                    <a href="#/" className="sprite_01 logo ">网易云音乐</a>
                     <div className="select-list">
                         {
                             headerLinks.map((item, index) => {
