@@ -1,3 +1,4 @@
+//轮播图组件,使用antd完成
 import React, { memo, useEffect, useRef, useCallback, useState } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 
@@ -41,7 +42,11 @@ export default memo(function HYTopBanner() {
     <BannerWrapper bgImage={bgImage}>
       <div className="banner wrap-v2">
         <BannerLeft>
-          <Carousel effect="fade" autoplay ref={bannerRef} beforeChange={bannerChange}>
+          <Carousel effect="fade"
+                    autoplay ref={bannerRef}
+                    beforeChange={bannerChange}
+                    dots = {{className : "dots"}}
+          >
             {
               topBanners.map((item, index) => {
                 return (

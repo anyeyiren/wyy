@@ -22,6 +22,17 @@ export const BannerLeft = styled.div`
       width: 100%;
     }
   }
+  
+   .dots li button{
+    display: block;
+    height: 0;
+    width: 0;
+    border: 4px solid #fff;
+    border-radius: 4px;
+  }
+  .dots li button .hover{
+    border: 4px solid #c20c0c;
+  }
 `
 
 export const BannerRight = styled.a.attrs({

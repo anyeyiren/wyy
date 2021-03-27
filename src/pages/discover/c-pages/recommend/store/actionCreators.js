@@ -2,14 +2,23 @@ import * as actionTypes from './constants';
 
 import { getNewAlbums } from '@/services/recommend';
 
-import { 
-  getTopBanners,
+import {
   getHotRecommends,
   getTopList
 } from '@/services/recommend';
+import {
+  getBanners
+} from '@/network/recommend'
 
+const getBannerAction = ()=>{
+  return dispatch =>{
+    getBanners.then(res=>{
+      dispatch(changeTopBannerAction(res))
+    })
+  }
+}
 const changeTopBannerAction = (res) => ({
-  type: actionTypes.CHANGE_TOP_BANNERS,
+  type: actionTypes.CHANGE_BANNERS,
   topBanners: res.banners
 });
 
@@ -40,7 +49,7 @@ const changeOriginRankingAction = (res) => ({
 
 export const getTopBannerAction = () => {
   return dispatch => {
-    getTopBanners().then(res => {
+    getBanners().then(res => {
       dispatch(changeTopBannerAction(res));
     })
   }
