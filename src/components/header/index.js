@@ -25,7 +25,7 @@ export default memo(function Header(props) {
                 </NavLink>
             )
         } else {
-            return <a href={item.link}>{item.title}</a>
+            return <a href={item.link}>{item.title} </a>
         }
     }
 
@@ -49,8 +49,8 @@ export default memo(function Header(props) {
                 </HeaderLeft>
                 <HeaderRight>
                     <Input className="search" placeholder="音乐/视频/电台/用户" prefix={<SearchOutlined />}/>
-                    <a className="center">创作者中心</a>
-                    <a>登录</a>
+                    <a className="center" href="#/">创作者中心</a>
+                    <a href="#/">登录</a>
                 </HeaderRight>
             </div>
             <div className="divider"></div>

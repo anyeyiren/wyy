@@ -8,6 +8,7 @@ import {HashRouter} from "react-router-dom";
 
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+ import HYAppFooter from "./components/app-footer"
 
 export default memo(function(props) {
     return (
@@ -19,6 +20,7 @@ export default memo(function(props) {
             </Suspense>*/}
                 {renderRoutes(routes)}
                 <Footer/>
+                {/*<HYAppFooter/>*/}
             </HashRouter>
         </Provider>
 
