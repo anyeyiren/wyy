@@ -5,7 +5,7 @@ import axios from "axios";
 * 封装网络请求
 * */
 //创建axios实例
-const instance = axios.create({
+const requsest = axios.create({
     baseURL: 'http://123.207.32.32:9001/',
     timeout: 10000
 });
@@ -14,14 +14,14 @@ const instance = axios.create({
 
 //配置请求
 
-instance.interceptors.request.use(config => {
+requsest.interceptors.request.use(config => {
     return config;
 }, error => {
     return error;
 });
 
 //配置拦截
-instance.interceptors.response.use(response => {
+requsest.interceptors.response.use(response => {
     return response.data;
 }, error => {
     if (error && error.response) {
@@ -40,4 +40,4 @@ instance.interceptors.response.use(response => {
     }
 });
 
-export default instance;
+export default requsest;

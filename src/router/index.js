@@ -20,10 +20,12 @@ import Songs from "../pages/discover/c-pages/songs";
 import Djradio from "../pages/discover/c-pages/djradio";
 import Artist from "../pages/discover/c-pages/artist";
 import Album from "../pages/discover/c-pages/album";
+
 import Player from "../pages/player";
 
 import Mine from "@/pages/mine";
-import Friend from "@/pages/friend";
+import  Friend from "@/pages/friend";
+import Download from "@/pages/download"
 
 
 const routes = [
@@ -84,6 +86,10 @@ const routes = [
     path: "/friend",
     component: Friend
   },
+  {
+    path: "/download",
+    component : Download
+  }
 ];
 
 export default routes;
