@@ -10,11 +10,11 @@ const defaultState = Map({
 export default (state = defaultState,action) =>{
     switch (action.type) {
         case actionType.TOP_RANK:
-            return state.set("rank",action.topList);
+            return state.set("rank",action.rank);
         case actionType.CURRENT_INDEX:
-            return state.set("index",action.currentIndex);
+            return state.set("index",action.index);
         case actionType.PLAY_LIST:
-            return state.set("playList",action.playlist);
+            return state.set("playList",action.playList);
         default:
             return state;
     }

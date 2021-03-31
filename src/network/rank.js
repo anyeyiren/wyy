@@ -2,13 +2,13 @@ import request from "./axios";
 
 
 
-export function getRank() {
+export function rank() {
     return request({
-        url:"/toplist"
+        url:"./toplist"
     })
 }
 //榜单详情
-export function getRankList(id) {
+export function rankList(id) {
     return request({
         url:"./playlist/detail",
         params:{
