@@ -1,4 +1,3 @@
-//头部列表数据
 export const headerLinks = [
     {
         title: "发现音乐",

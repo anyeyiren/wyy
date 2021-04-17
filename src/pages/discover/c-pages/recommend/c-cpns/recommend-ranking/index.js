@@ -1,36 +1,40 @@
-import React, { memo, useEffect } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import React, { useEffect, memo } from 'react';
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 
+import {
+  getTopData
+} from "../../store/actionCreators";
 
 import HYThemeHeaderRCM from '@/components/theme-header-rcm';
-import HYTopRanking from '@/components/top-ranking';
-import { RankingWrapper } from './style';
-import { getTopListAction } from '../../store/actionCreators';
+import HYTopRanking from "@/components/top-ranking";
+import {
+  RankingWrapper
+} from "./style";
 
-export default memo(function HYRecomendRanking() {
-  // redux hooks
-  const { upRanking, newRanking, originRanking } = useSelector(state => ({
-    upRanking: state.getIn(["recommend", "upRanking"]),
-    newRanking: state.getIn(["recommend", "newRanking"]),
-    originRanking: state.getIn(["recommend", "originRanking"]),
-  }), shallowEqual);
+export default memo(function HYRankingList() {
+  // redux
   const dispatch = useDispatch();
+  const state = useSelector((state) => ({
+    topUpList: state.getIn(["recommend", "topUpList"]),
+    topNewList: state.getIn(["recommend", "topNewList"]),
+    topOriginList: state.getIn(["recommend", "topOriginList"])
+  }), shallowEqual);
 
-  // other hooks
+  // hooks
   useEffect(() => {
-    dispatch(getTopListAction(0));
-    dispatch(getTopListAction(2));
-    dispatch(getTopListAction(3));
-  }, [dispatch]);
+    dispatch(getTopData(0));
+    dispatch(getTopData(2));
+    dispatch(getTopData(3));
+  }, [dispatch])
 
   return (
-    <RankingWrapper>
-      <HYThemeHeaderRCM title="榜单" />
-      <div className="tops">
-        <HYTopRanking info={upRanking}/>
-        <HYTopRanking info={newRanking}/>
-        <HYTopRanking info={originRanking}/>
-      </div>
-    </RankingWrapper>
+      <RankingWrapper>
+        <HYThemeHeaderRCM title="榜单" moreLink="/discover/ranking"/>
+        <div className="tops">
+          <HYTopRanking info={state.topUpList}/>
+          <HYTopRanking info={state.topNewList}/>
+          <HYTopRanking info={state.topOriginList}/>
+        </div>
+      </RankingWrapper>
   )
 })

@@ -8,7 +8,7 @@ import {HashRouter} from "react-router-dom";
 
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import AppPlayer from "@/pages/player/app-player-bar"
+import AppPlayer from "@/pages/player/app-play-bar"
 export default memo(function(props) {
     return (
         <Provider store={store}>

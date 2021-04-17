@@ -1,92 +1,97 @@
-import * as actionTypes from './constants';
-
-import { getNewAlbums } from '@/services/recommend';
+import * as actionTypes from "./constants";
 
 import {
-  getHotRecommends,
-  getTopList
-} from '@/services/recommend';
-import {
-  getBanners
-} from '@/network/recommend'
+  getTopBanner,
+  getHotRecommend,
+  getNewAlbum,
+  getTopList,
+  getArtistList
+} from "@/services/recommend";
 
-const getBannerAction = ()=>{
-  return dispatch =>{
-    getBanners.then(res=>{
-      dispatch(changeTopBannerAction(res))
-    })
-  }
-}
-const changeTopBannerAction = (res) => ({
-  type: actionTypes.CHANGE_BANNERS,
-  topBanners: res.banners
-});
+const changeBannerAction = (res) => ({
+  type: actionTypes.CHANGE_TOP_BNNAER,
+  banners: res.banners
+})
 
-const changeHotRecommendAction = (res) => ({
+const changeRecommendAction = (res) => ({
   type: actionTypes.CHANGE_HOT_RECOMMEND,
-  hotRecommends: res.result
+  recommends: res.result
 })
 
 const changeNewAlbumAction = (res) => ({
   type: actionTypes.CHANGE_NEW_ALBUM,
-  newAlbums: res.albums
+  newAlbum: res.albums
 })
 
-const changeUpRankingAction = (res) => ({
-  type: actionTypes.CHANGE_UP_RANKING,
-  upRanking: res.playlist
+const changeUpListAction = (res) => ({
+  type: actionTypes.CHANGE_UP_LIST,
+  topUpList: res.playlist
 })
 
-const changeNewRankingAction = (res) => ({
-  type: actionTypes.CHANGE_NEW_RANKING,
-  newRanking: res.playlist
+const changeNewListAction = (res) => ({
+  type: actionTypes.CHANGE_NEW_LIST,
+  topNewList: res.playlist
 })
 
-const changeOriginRankingAction = (res) => ({
-  type: actionTypes.CHANGE_ORIGIN_RANKING,
-  originRanking: res.playlist
+const changeOriginListAction = (res) => ({
+  type: actionTypes.CHANGE_ORIGIN_LIST,
+  topOriginList: res.playlist
 })
 
-export const getTopBannerAction = () => {
+const changeSettleSingsAction = (res) => ({
+  type: actionTypes.CHANGE_SETTLE_SONGER,
+  settleSings: res.artists
+})
+
+
+export const getBanner = () => {
   return dispatch => {
-    getBanners().then(res => {
-      dispatch(changeTopBannerAction(res));
-    })
-  }
-};
-
-export const getHotRecommendAction = (limit) => {
-  return dispatch => {
-    getHotRecommends(limit).then(res => {
-      dispatch(changeHotRecommendAction(res));
-    })
-  }
-}
-
-export const getNewAlbumAction = (limit) => {
-  return dispatch => {
-    getNewAlbums(limit).then(res => {
-      // const albums = res.albums;
-      dispatch(changeNewAlbumAction(res));
+    getTopBanner().then(res => {
+      dispatch(changeBannerAction(res));
     })
   }
 }
 
-export const getTopListAction = (idx) => {
+export const getRecommend = () => {
+  return dispatch => {
+    getHotRecommend().then(res => {
+      dispatch(changeRecommendAction(res))
+    })
+  }
+}
+
+export const getAlbum = () => {
+  return dispatch => {
+    getNewAlbum(10, 0).then(res => {
+      dispatch(changeNewAlbumAction(res))
+    })
+  }
+}
+
+export const getTopData = (idx) => {
   return dispatch => {
     getTopList(idx).then(res => {
       switch (idx) {
         case 0:
-          dispatch(changeUpRankingAction(res));
+          dispatch(changeNewListAction(res));
           break;
         case 2:
-          dispatch(changeNewRankingAction(res));
+          dispatch(changeOriginListAction(res));
           break;
         case 3:
-          dispatch(changeOriginRankingAction(res));
+          dispatch(changeUpListAction(res));
           break;
         default:
+          console.log("其他数据处理");
       }
-    });
+    })
+  }
+}
+
+export const getSettleSingers = () => {
+  return dispath => {
+    getArtistList(5, 5001).then(res => {
+      dispath(changeSettleSingsAction(res))
+    })
   }
 }

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-export const PlayBarWrapper = styled.div`
+export const PlaybarWrapper = styled.div`
   position: fixed;
+  z-index: 99;
   left: 0;
   right: 0;
   bottom: 0;
@@ -111,6 +112,7 @@ export const PlayInfo = styled.div`
       }
     }
   }
+  
 `
 
 export const Operator = styled.div`
@@ -121,7 +123,6 @@ export const Operator = styled.div`
   .btn {
     width: 25px;
     height: 25px;
-    cursor: pointer;
   }
 
   .favor {
@@ -133,6 +134,8 @@ export const Operator = styled.div`
   }
 
   .right {
+    display: flex;
+    align-items: center;
     width: 126px;
     padding-left: 13px;
     background-position: -147px -248px;
@@ -143,18 +146,21 @@ export const Operator = styled.div`
 
     .loop {
       background-position: ${props => {
-    switch(props.sequence) {
-        case 1:
-            return "-66px -248px"
-        case 2:
-            return "-66px -344px"
-        default:
-            return "-3px -344px"
-    }
-}};
+        switch(props.sequence) {
+          case 1:
+            return "-66px -248px";
+          case 2:
+            return "-66px -344px";
+          default:
+            return "-3px -344px";
+        }
+      }};
     }
 
     .playlist {
+      padding-left: 18px;
+      text-align: center;
+      color: #ccc;
       width: 59px;
       background-position: -42px -68px;
     }

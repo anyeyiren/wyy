@@ -25,6 +25,9 @@ function HYRecommend(props) {
           <HYRecommendRanking/>
         </RecommendLeft>
         <RecommendRight>
+          <HYUserLogin />
+          <HYSettleSinger />
+          <HYHotAnchor />
         </RecommendRight>
       </Content>
     </RecommendWrapper>
