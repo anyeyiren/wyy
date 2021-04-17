@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PlaybarWrapper = styled.div`
+export const PlayBarWrapper = styled.div`
   position: fixed;
   left: 0;
   right: 0;
@@ -143,15 +143,15 @@ export const Operator = styled.div`
 
     .loop {
       background-position: ${props => {
-        switch(props.sequence) {
-          case 1:
+    switch(props.sequence) {
+        case 1:
             return "-66px -248px"
-          case 2:
+        case 2:
             return "-66px -344px"
-          default:
+        default:
             return "-3px -344px"
-        }
-      }};
+    }
+}};
     }
 
     .playlist {

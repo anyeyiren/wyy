@@ -6,7 +6,7 @@ import {
   PlayerRight
 } from './style';
 
-export default memo(function HYPlayer() {
+export default memo(function Player() {
   return (
     <PlayerWrapper>
       <div className="content wrap-v2">

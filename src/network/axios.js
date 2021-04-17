@@ -14,11 +14,8 @@ const requsest = axios.create({
 
 //配置请求
 
-requsest.interceptors.request.use(config => {
-    return config;
-}, error => {
-    return error;
-});
+requsest.interceptors.request.use(config => config
+, error => error);
 
 //配置拦截
 requsest.interceptors.response.use(response => {
